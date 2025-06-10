@@ -29,8 +29,6 @@ You can use the provided binary but if you must compile it yourself: Use arduino
 <br>Please note: by popular demand I have published the code here but i do not feel responsible for problems as to compiling. Impossible for me to know why it doesn't compile in your situation.
 
 ## downloads
-june 25 2025: There is a new version 0_1 available.<br> 
-Download [ESP32C3-P1METER-v0_2](https://github.com/patience4711/ESP32-C3-READ-P1-METER/blob/main/ESP32C3-P1METER-v0_2.ino.esp32c3.bin)<br>
 july 26 2023: There is a version for a nodemcu available.<br> 
 Download [ESP-P1METER-v0_c](https://github.com/patience4711/ESP-READ-P1-METER/blob/main/ESP-P1METER-v0_c.bin)<br>
 
