@@ -30,7 +30,7 @@ You can use the provided binary but if you must compile it yourself: Use arduino
 
 ## downloads
 july 26 2023: There is a version for a nodemcu available.<br> 
-Download [ESP-P1METER-v0_c](https://github.com/patience4711/ESP-READ-P1-METER/blob/main/ESP-P1METER-v0_c.bin)<br>
+Download [ESP-P1METER-v0_c](https://github.com/patience4711/ESP8266_read_p1meter/blob/main/ESP-P1METER-v0_c.bin)<br>
 
 ## features
 - Simply to connect to your wifi
