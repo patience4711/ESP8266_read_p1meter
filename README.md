@@ -1,10 +1,10 @@
 # ESP-READ-P1-METER
 
-The purpose of this project is to read data from a so called smart meter (model Sagecom 210 ESMR5) via its serial port. All we have to do is connect an ESP32C3 device (tested with ESP32C3 super mini) via an rj11 cable to the serial port of the meter. (I use a cable that is 15m long). The data is made available via mosquitto or an API and is also diplayed on a webpage.  Now we can process the data in our domotica systems like 'Domotics' to display graphs ,control switches or manage a homebattery.<br>
+The purpose of this project is to read data from a so called smart meter (model Sagecom 210 ESMR5) via its serial port. All we have to do is connect an ESP8266 device (tested with ESP3212-E nodeMcu) via an rj11 cable to the serial port of the meter. (I use a cable that is 15m long). The data is made available via mosquitto or an API and is also diplayed on a webpage.  Now we can process the data in our domotica systems like 'Domotics' to display graphs ,control switches or manage a homebattery.<br>The API is compatible with the p1 dongle from HomeWizzard.
 
 ![frontpage](https://github.com/patience4711/ESP-READ-P1-METER/assets/12282915/bb65cf1f-f6bf-4e1c-ae48-c379628f3a7a)<br>
 
-I know this has been done before but not on this platform. The esp32c3 is very small and can fed with the 5v of the meter. Since i have other projects which partially use the same software, it is only a small step to adapt it to a new function. So it inherits many nice features from the other projects. 
+I know this has been done before but not this project has more features. The esp8266 can be fed with the 5v of the meter. Since i have other projects which partially use the same software, it is only a small step to adapt it to a new function. So it inherits many nice features from the other projects. 
 
 The program has a lot of smart features. All settings can be done via the webinterface. Because the ESP has only one reliable working hardware serial port, this port is dedicated to the serial communication with the p1 meter. For the debugging we can use a web console just like in my other projects where the serial port is dedicated to the zigbee module. In the console we can call some processes and watch the output. 
 See the [WIKI](https://github.com/patience4711/ESP-READ-P1-METER/wiki/GENERAL) for information on building it, the working, etc. 
@@ -48,14 +48,14 @@ Download [ESP-P1METER-v0_c](https://github.com/patience4711/ESP-READ-P1-METER/bl
 ## the hardware
 It is nothing more than an esp8266 device (tested with nodeMcu. The other materials are
 - a prepared cable with an 6-pins RJ-11 plug.
-- a 107 resistor to pullup the RX pin on the meter.
+- a 10K resistor to pullup the RX pin on the meter.
 For info on how to build and use it, please see the <a href=''>WIKI</a>
 
 ## how does it work
-The P1-meter spits out data every 10 seconds, this has the form of a textdocument called a telegram. This document consists of lines that each represent a value.
+The P1-meter spits out data (a so called telegram) when its rx pin is pulled high. Since we need a pullup resistor for the open collector in tx, this resistor is also connected with rx. So when we trigger the meter, this tx pin is also pulled up with 3,3 volt, this means no troubles with the 5v intolerance of an esp input.  We now receive the telegram, this has the form of a textdocument containing lines that each represent a value.
 It starts with a "/" and ends with a "!". The telegram is spit out when the meter's rx is pulled high.
 
-The program makes rx high and reads the serial port until the "/" is found. Now the next incoming bytes are stored in a char array until the endcharacter is encountered. So now we have the full telegram as a char array.
+The program makes rx high and pulls-up the tx, next reads the serial port until the "/" is found. Now the following incoming bytes are stored in a char array until the endcharacter "!" is encountered. So now we have the full telegram as a char array.
 Next the checksum calculation is done and when the char array is approved, the interesting values can be extracted.
 
 ## changelog ##
