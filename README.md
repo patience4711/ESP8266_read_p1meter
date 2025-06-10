@@ -1,6 +1,6 @@
 # ESP-READ-P1-METER
 
-The purpose of this project is to read data from a so called smart meter (model Sagecom 210 ESMR5) via its serial port. All we have to do is connect an ESP8266 device (tested with ESP3212-E nodeMcu) via an rj11 cable to the serial port of the meter. (I use a cable that is 15m long). The data is made available via mosquitto or an API and is also displayed on a webpage.  Now we can process the data in our domotica systems like 'Domotics' to display graphs ,control switches or manage a homebattery.<br>The API is compatible with the p1 dongle from HomeWizzard.
+The purpose of this project is to read data from a so called smart meter (model Sagecom 210 ESMR5) via its serial port. All we have to do is connect an ESP8266 device (tested with ESP3212-E nodeMcu) via an rj11 cable to the serial port of the meter. (I use a cable that is 15m long). The data is made available via mosquitto or an API and is also displayed on a webpage.  Now we can process the data in our domotica systems like 'Domotics' to display graphs, control switches or manage a homebattery.<br>The API is compatible with the p1 dongle from HomeWizzard.
 
 ![frontpage](https://github.com/patience4711/ESP-READ-P1-METER/assets/12282915/bb65cf1f-f6bf-4e1c-ae48-c379628f3a7a)<br>
 
