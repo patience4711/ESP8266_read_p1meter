@@ -9,7 +9,7 @@ I know this has been done before but not this project has more features. The esp
 The program has a lot of smart features. All settings can be done via the webinterface. Because the ESP has only one reliable working hardware serial port, this port is dedicated to the serial communication with the p1 meter. For the debugging we can use a web console just like in my other projects where the serial port is dedicated to the zigbee module. In the console we can call some processes and watch the output. 
 See the [WIKI](https://github.com/patience4711/ESP-READ-P1-METER/wiki/GENERAL) for information on building it, the working, etc. 
 
-This program runs on a nodemcu but in future there will be a version for ESP32-C3, not all ESP's can be powered by the meter.
+This program runs on a nodemcu but there is also a version for ESP32-C3 available. 
 
 ## status and todo's
 The software has been tested on a Sagemcom T210 meter and works good.
